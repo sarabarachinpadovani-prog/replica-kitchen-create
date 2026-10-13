@@ -58,17 +58,12 @@ const steps = [
   {
     number: "02",
     title: "Prototype",
-    text: "Un premier modèle est sculpté et moulé. Vous validez la forme, la couleur et la texture.",
+    text: "Vous validez la forme, la couleur et la texture.",
   },
   {
     number: "03",
     title: "Production",
     text: "Fabrication en série ou pièce unique, peinte à la main dans notre atelier.",
-  },
-  {
-    number: "04",
-    title: "Livraison",
-    text: "Emballage renforcé et expédition suivie partout en Europe sous 3 à 6 semaines.",
   },
 ];
 
@@ -195,7 +190,7 @@ function SurMesure() {
           Un plat signature, un menu entier, une pièce d'exposition : nous reproduisons
           n'importe quelle préparation à l'échelle, à partir de simples photos.
         </p>
-        <div className="mt-14 grid gap-px bg-primary-foreground/15 md:grid-cols-4">
+        <div className="mt-14 grid gap-px bg-primary-foreground/15 md:grid-cols-3">
           {steps.map((step) => (
             <div key={step.number} className="bg-primary p-6">
               <p className="font-display text-3xl font-extrabold text-primary-foreground/40">
