@@ -1,10 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 import heroImg from "@/assets/hero.jpg";
 import croissantImg from "@/assets/croissant.jpg";
-import ramenImg from "@/assets/ramen.jpg";
-import sushiImg from "@/assets/sushi.jpg";
+import macaronsImg from "@/assets/macarons.jpg";
+import gaufreImg from "@/assets/gaufre.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -32,23 +32,20 @@ const products = [
   {
     name: "Croissant au beurre",
     category: "Boulangerie",
-    price: "49 €",
     description: "Feuilletage moulé couche par couche, dorure à la main.",
     image: croissantImg,
   },
   {
-    name: "Ramen tonkotsu",
-    category: "Cuisine asiatique",
-    price: "189 €",
-    description: "Bouillon laqué, nouilles en résine souple, œuf ajitsuke.",
-    image: ramenImg,
+    name: "Macarons",
+    category: "Pâtisserie",
+    description: "Coques lisses et garnitures pastel, assemblées pièce par pièce.",
+    image: macaronsImg,
   },
   {
-    name: "Assortiment nigiri",
-    category: "Cuisine asiatique",
-    price: "145 €",
-    description: "Cinq pièces : thon, saumon, crevette, calamar, tamago.",
-    image: sushiImg,
+    name: "Gaufre de Liège",
+    category: "Pâtisserie",
+    description: "Grille en relief, sucre perlé et nappage caramélisé.",
+    image: gaufreImg,
   },
 ];
 
@@ -118,14 +115,14 @@ function Hero() {
       <div className="mx-auto max-w-6xl px-6 pt-16 pb-10 md:pt-24">
         <p className="section-label">Répliques alimentaires — fait main en Belgique</p>
         <h1 className="headline-xl mt-6 text-5xl md:text-8xl">
-          La nourriture,
+          Factices
           <br />
-          sans date
+          alimentaires
           <br />
-          d'expiration.
+          sur mesure.
         </h1>
         <p className="mt-8 max-w-xl text-lg text-muted-foreground">
-          Nous sculptons des répliques alimentaires hyperréalistes pour les vitrines de
+          Nous fabriquons des répliques alimentaires hyperréalistes pour les vitrines de
           restaurants, les boutiques, les musées et les plateaux de tournage.
         </p>
       </div>
@@ -171,9 +168,8 @@ function Catalogue() {
               </div>
               <div className="p-6">
                 <p className="section-label">{product.category}</p>
-                <div className="mt-3 flex items-baseline justify-between gap-4">
+                <div className="mt-3">
                   <h3 className="font-display text-xl font-bold">{product.name}</h3>
-                  <span className="font-display text-lg font-bold">{product.price}</span>
                 </div>
                 <p className="mt-2 text-sm text-muted-foreground">{product.description}</p>
               </div>
@@ -244,31 +240,6 @@ function Realisations() {
   );
 }
 
-function Garanties() {
-  const items = [
-    "Résines alimentaires sans danger, stables aux UV",
-    "Peinture et finitions 100 % artisanales",
-    "Garantie 5 ans contre la décoloration",
-    "Expédition suivie partout en Europe",
-  ];
-  return (
-    <section className="py-20 md:py-28">
-      <div className="mx-auto max-w-6xl px-6">
-        <p className="section-label">Pourquoi nous</p>
-        <div className="mt-10 grid gap-6 md:grid-cols-2">
-          {items.map((item) => (
-            <div key={item} className="flex items-start gap-4">
-              <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center bg-primary text-primary-foreground">
-                <Check className="size-4" />
-              </span>
-              <p className="text-lg font-medium">{item}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 function Footer() {
   return (
@@ -296,7 +267,7 @@ function Index() {
         <Catalogue />
         <SurMesure />
         <Realisations />
-        <Garanties />
+
       </main>
       <Footer />
     </div>
