@@ -13,7 +13,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Atelier Factice crée des répliques alimentaires hyperréalistes pour vitrines de restaurants, boutiques et musées. Catalogue, commandes sur mesure et réalisations.",
+          "Atelier Factice crée des répliques alimentaires hyperréalistes pour vitrines de restaurants, boutiques et musées. Catalogue et commandes sur mesure.",
       },
       { property: "og:title", content: "Atelier Factice — Répliques alimentaires hyperréalistes" },
       {
@@ -67,13 +67,6 @@ const steps = [
   },
 ];
 
-const realisations = [
-  { client: "Brasserie Lumen — Paris", project: "Vitrine complète, 24 pièces" },
-  { client: "Musée du Goût — Lyon", project: "Parcours « Le repas », 60 répliques" },
-  { client: "Chaîne Umami — Bruxelles", project: "Menus d'exposition, 12 restaurants" },
-  { client: "Studio Lumière — Tournage", project: "Accessoires plateau, série TV" },
-];
-
 function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-background/90 backdrop-blur">
@@ -87,9 +80,6 @@ function Header() {
           </a>
           <a href="#sur-mesure" className="transition-colors hover:text-muted-foreground">
             Sur mesure
-          </a>
-          <a href="#realisations" className="transition-colors hover:text-muted-foreground">
-            Réalisations
           </a>
         </nav>
         <a
@@ -213,29 +203,6 @@ function SurMesure() {
   );
 }
 
-function Realisations() {
-  return (
-    <section id="realisations" className="border-b border-border py-20 md:py-28">
-      <div className="mx-auto max-w-6xl px-6">
-        <p className="section-label">Portfolio</p>
-        <h2 className="headline-xl mt-4 text-4xl md:text-6xl">Réalisations</h2>
-        <div className="mt-14 divide-y divide-border border-y border-border">
-          {realisations.map((item) => (
-            <div
-              key={item.client}
-              className="flex flex-wrap items-baseline justify-between gap-2 py-6"
-            >
-              <h3 className="font-display text-xl font-bold md:text-2xl">{item.client}</h3>
-              <p className="text-sm text-muted-foreground">{item.project}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-
 function Footer() {
   return (
     <footer className="border-t border-border bg-secondary py-12">
@@ -261,7 +228,6 @@ function Index() {
         <Hero />
         <Catalogue />
         <SurMesure />
-        <Realisations />
 
       </main>
       <Footer />
