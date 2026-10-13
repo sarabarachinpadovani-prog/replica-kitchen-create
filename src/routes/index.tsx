@@ -207,7 +207,7 @@ function SurMesure() {
           ))}
         </div>
         <a
-          href="mailto:bonjour@atelier-factice.be"
+          href="mailto:atelierfactice@gmail.com"
           className="mt-12 inline-flex items-center gap-2 border border-primary-foreground px-6 py-3 text-sm font-semibold transition-colors hover:bg-primary-foreground hover:text-primary"
         >
           Démarrer un projet sur mesure
@@ -247,8 +247,8 @@ function Footer() {
       <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-6 px-6">
         <p className="font-display text-lg font-extrabold uppercase">Atelier Factice</p>
         <div className="text-sm text-muted-foreground">
-          <a href="mailto:bonjour@atelier-factice.be" className="hover:text-foreground">
-            bonjour@atelier-factice.be
+          <a href="mailto:atelierfactice@gmail.com" className="hover:text-foreground">
+            atelierfactice@gmail.com
           </a>
           <span className="mx-3">·</span>
           <span>Bruxelles, Belgique</span>
