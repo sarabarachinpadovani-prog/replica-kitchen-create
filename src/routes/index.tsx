@@ -42,7 +42,7 @@ const products = [
     image: macaronsImg,
   },
   {
-    name: "Gaufre de Bruxelles",
+    name: "Gaufre de Liège",
     category: "Pâtisserie",
     description: "Grille en relief, sucre perlé et nappage caramélisé.",
     image: gaufreImg,
