@@ -240,31 +240,6 @@ function Realisations() {
   );
 }
 
-function Garanties() {
-  const items = [
-    "Résines alimentaires sans danger, stables aux UV",
-    "Peinture et finitions 100 % artisanales",
-    "Garantie 5 ans contre la décoloration",
-    "Expédition suivie partout en Europe",
-  ];
-  return (
-    <section className="py-20 md:py-28">
-      <div className="mx-auto max-w-6xl px-6">
-        <p className="section-label">Pourquoi nous</p>
-        <div className="mt-10 grid gap-6 md:grid-cols-2">
-          {items.map((item) => (
-            <div key={item} className="flex items-start gap-4">
-              <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center bg-primary text-primary-foreground">
-                <Check className="size-4" />
-              </span>
-              <p className="text-lg font-medium">{item}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 function Footer() {
   return (
@@ -292,7 +267,7 @@ function Index() {
         <Catalogue />
         <SurMesure />
         <Realisations />
-        <Garanties />
+
       </main>
       <Footer />
     </div>
