@@ -9,13 +9,13 @@ import gaufreImg from "@/assets/gaufre.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Atelier Factice — Répliques alimentaires hyperréalistes" },
+      { title: "Factice Works — Répliques alimentaires hyperréalistes" },
       {
         name: "description",
         content:
-          "Atelier Factice crée des répliques alimentaires hyperréalistes pour vitrines de restaurants, boutiques et musées. Catalogue et commandes sur mesure.",
+          "Factice Works crée des répliques alimentaires hyperréalistes pour vitrines de restaurants, boutiques et musées. Catalogue et commandes sur mesure.",
       },
-      { property: "og:title", content: "Atelier Factice — Répliques alimentaires hyperréalistes" },
+      { property: "og:title", content: "Factice Works — Répliques alimentaires hyperréalistes" },
       {
         property: "og:description",
         content:
@@ -72,7 +72,7 @@ function Header() {
     <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-background/90 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
         <a href="#top" className="font-display text-lg font-extrabold uppercase tracking-tight">
-          Atelier Factice
+          Factice Works
         </a>
         <nav className="hidden items-center gap-8 text-sm font-medium md:flex">
           <a href="#catalogue" className="transition-colors hover:text-muted-foreground">
@@ -207,7 +207,7 @@ function Footer() {
   return (
     <footer className="border-t border-border bg-secondary py-12">
       <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-6 px-6">
-        <p className="font-display text-lg font-extrabold uppercase">Atelier Factice</p>
+        <p className="font-display text-lg font-extrabold uppercase">Factice Works</p>
         <div className="text-sm text-muted-foreground">
           <a href="mailto:atelierfactice@gmail.com" className="hover:text-foreground">
             atelierfactice@gmail.com
