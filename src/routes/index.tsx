@@ -42,9 +42,9 @@ const products = [
     image: macaronsImg,
   },
   {
-    name: "Gaufre de Liège",
+    name: "Gaufre artisanale",
     category: "Pâtisserie",
-    description: "Grille en relief, sucre perlé et nappage caramélisé.",
+    description: "Grille en relief, cuisson dorée mate, moulée et peinte à la main.",
     image: gaufreImg,
   },
 ];
