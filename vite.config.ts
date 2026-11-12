@@ -6,7 +6,8 @@
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
-export default defineConfig(({ mode }) => {
+export default defineConfig((env) => {
+  const { mode } = env;
   const githubPages = mode === "github-pages";
   const base = githubPages
     ? `${(process.env.GITHUB_PAGES_BASE_PATH ?? "").replace(/\/$/, "")}/`
@@ -33,5 +34,5 @@ export default defineConfig(({ mode }) => {
         }
       : {}),
   },
-  })({ mode, command: "build" });
+  })(env);
 });
