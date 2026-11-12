@@ -33,8 +33,10 @@ Dans le dépôt GitHub, ouvrir **Settings → Pages → Build and deployment**, 
 choisir **GitHub Actions** comme source. Le dépôt doit être connecté à Lovable
 ou contenir une copie de ce projet ; le workflow ne crée pas de dépôt.
 
-Le workflow teste le site avec `npm run test`, génère sa version statique avec
-`npm run build -- --mode github-pages` et publie uniquement
-`dist/client`. Le chemin du dépôt (ou du domaine personnalisé) est détecté par
+Le workflow génère la version statique avec `bun run build`, puis déploie `dist`.
+Avant publication, seul le contenu public de `dist/client` est conservé à la
+racine de `dist` ; aucun fichier serveur n'est publié.
+Le chemin du dépôt (ou du domaine personnalisé) est détecté par
 GitHub Pages pour que les images et les liens restent corrects. Le mode
-`github-pages` ne modifie pas le déploiement habituel sur Lovable.
+`github-pages`, activé par `GITHUB_PAGES_BUILD=true` dans le workflow, ne modifie
+pas le déploiement habituel sur Lovable.
