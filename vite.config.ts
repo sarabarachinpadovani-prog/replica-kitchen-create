@@ -9,7 +9,8 @@ import type { ConfigEnv } from "vite";
 
 // Invoke the Lovable configuration factory once; nesting it duplicates plugins.
 export default (env: ConfigEnv) => {
-  const { mode } = env;
+  // CI selects the static mode without adding arguments to bun run build.
+  const mode = process.env['GITHUB_PAGES_BUILD'] === "true" ? "github-pages" : env.mode;
   const githubPages = mode === "github-pages";
   const base = githubPages
     ? `${(process.env['GITHUB_PAGES_BASE_PATH'] ?? "").replace(/\/$/, "")}/`
@@ -36,5 +37,5 @@ export default (env: ConfigEnv) => {
           }
         : {}),
     },
-  })(env);
+  })({ ...env, mode });
 };
