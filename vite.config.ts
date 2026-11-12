@@ -10,29 +10,29 @@ export default defineConfig((env) => {
   const { mode } = env;
   const githubPages = mode === "github-pages";
   const base = githubPages
-    ? `${(process.env.GITHUB_PAGES_BASE_PATH ?? "").replace(/\/$/, "")}/`
+    ? `${(process.env['GITHUB_PAGES_BASE_PATH'] ?? "").replace(/\/$/, "")}/`
     : "/";
 
   return defineConfig({
-  vite: { base },
-  // Pages serves static files; Node is used only by CI to prerender the HTML.
-  ...(githubPages ? { nitro: { preset: "node-server" } } : {}),
-  tanstackStart: {
-    // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
-    // nitro/vite builds from this
-    server: { entry: "server" },
-    ...(githubPages
-      ? {
-          router: { basepath: base },
-          pages: [{ path: "/" }],
-          prerender: {
-            enabled: true,
-            autoStaticPathsDiscovery: false,
-            crawlLinks: false,
-            failOnError: true,
-          },
-        }
-      : {}),
-  },
+    vite: { base },
+    // Pages serves static files; Node is used only by CI to prerender the HTML.
+    ...(githubPages ? { nitro: { preset: "node-server" } } : {}),
+    tanstackStart: {
+      // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
+      // nitro/vite builds from this
+      server: { entry: "server" },
+      ...(githubPages
+        ? {
+            router: { basepath: base },
+            pages: [{ path: "/" }],
+            prerender: {
+              enabled: true,
+              autoStaticPathsDiscovery: false,
+              crawlLinks: false,
+              failOnError: true,
+            },
+          }
+        : {}),
+    },
   })(env);
 });

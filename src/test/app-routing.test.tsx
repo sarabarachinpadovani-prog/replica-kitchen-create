@@ -15,7 +15,15 @@ describe("App routing", () => {
     const router = getRouter();
 
     expect(router.options.basepath).toBe("/replica-kitchen-create/");
-    expect(router.matchRoutes("/replica-kitchen-create/").at(-1)?.routeId).toBe("/");
+    const location = router.parseLocation({
+      pathname: "/replica-kitchen-create/",
+      href: "/replica-kitchen-create/",
+      search: "",
+      hash: "",
+      state: { __TSR_index: 0 },
+    });
+    expect(location.pathname).toBe("/");
+    expect(router.matchRoutes(location.pathname).at(-1)?.routeId).toBe("/");
   });
 
   it("matches a page for / instead of falling back to not found", () => {
