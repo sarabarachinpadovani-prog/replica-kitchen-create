@@ -1,0 +1,1 @@
+- [x] Simplifier le workflow GitHub Pages (install, bun run build, déployer dist, sans vérifications)
