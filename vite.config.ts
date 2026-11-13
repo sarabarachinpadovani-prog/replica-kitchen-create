@@ -18,8 +18,18 @@ export default (env: ConfigEnv) => {
 
   return defineConfig({
     vite: { base },
-    // Pages serves static files; Node is used only by CI to prerender the HTML.
-    ...(githubPages ? { nitro: { preset: "node-server" } } : {}),
+    // Pages serves static files only. Reuse the Lovable build layout (dist/server +
+    // dist/client) so the prerender shim finds a fetch-style server entry; the
+    // node-server preset has no fetch export and made the prerender hang in CI.
+    ...(githubPages
+      ? {
+          nitro: {
+            preset: "cloudflare-module",
+            output: { dir: "dist", serverDir: "dist/server", publicDir: "dist/client" },
+            cloudflare: { nodeCompat: true, deployConfig: false },
+          },
+        }
+      : {}),
     tanstackStart: {
       // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
       // nitro/vite builds from this
